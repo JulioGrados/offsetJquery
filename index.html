@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Animaciones con Offset</title>
+	<style>
+		#box {
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			width: 40px;
+			height: 40px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script src="js/vendor/jquery.js"></script>
+	<script>
+		$(function(){
+			$("#box").click(function(){
+				var pos = $(this).offset();
+				$(this).offset({
+					top: pos.top + 10,
+					left: pos.left + 10
+				});
+			});
+		});
+	</script>
+</body>
+</html>
